@@ -3,12 +3,21 @@
     padding:0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+a:hover{
+    cursor: pointer;
+}
 
 body{
     display: grid;
     height: 100vh;
+    overflow-x: hidden;
     grid-template-columns: 100%;
-    grid-template-rows: 2fr 6fr 2fr;
+    grid-template-rows: 1fr 10fr 1fr;
     grid-template-areas: 'nav' 'main' 'footer';
 }
 header#header{
@@ -43,12 +52,15 @@ ul#menu li a{
 
 main#main{
     grid-area: main;
-    padding: 5vmax;
+    padding-top: 2vmax;
+    padding-left: 5vmax;
+    padding-right: 5vmax;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 #train-track{
     position: relative;
@@ -58,20 +70,83 @@ main#main{
     position: absolute;
     left: 0;
     bottom:0;
-    width: 100%;
-    height: 10%;
+    width: 100vw;
+    height: 15vh;
 }
 .img-train{
     position: absolute;
-    right: 3%;
-    bottom: 3%;
-    width: 15%;
-    height: 15%;
+    right: -8vw;
+    bottom: 4vh;
+    width: 7vw;
+    height: 7vw;
     z-index: 999;
+    animation: ride 15s linear 1s infinite;
+}
+.bienvenido{
+    font-size: 2em;
+    line-height: 2em;
+}
+.euskotren{
+    color: forestgreen;
+    position: relative;
+}
+.euskotren:after{
+    background-color: forestgreen;
+    content: "";
+    height: 0.7vmin;
+    width: 10vmax;
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    border-top-right-radius: 7em;
+}
+.message{
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+button.travel{
+    color: white;
+    padding: 1em;
+    background-color: forestgreen;
+    border: 0;
+    margin-top: 2vmin;
+}
+button.travel:hover{
+    cursor: pointer;
 }
 footer#footer{
     grid-area: footer;
     background-color: rgb(62, 60, 59);
     color: white;
     padding: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-links{
+    color: white;
+}
+#newsletter h4{
+padding: 0.5em;
+}
+.newsletter{
+    padding: 0.5em;
+    outline: 1px solid green;
+    line-height: 1em;
+}
+.btn-newsletter{
+    padding: 0.5em;
+    background-color: forestgreen;
+    border: 1px solid forestgreen;
+    color: white;
+}
+
+
+@keyframes ride{
+    from{
+        right: -5vw;
+    }
+    to{
+        right: 105vw;
+    }
 }
