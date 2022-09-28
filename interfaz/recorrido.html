@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/recorrido.css">
     <title>Recorrido | EuskoTren</title>
 </head>
 <body>
@@ -18,5 +18,68 @@
             </ul>
         </div>
     </header>
+    <main id="main">
+        <div>
+        <div id="paradas">
+            <div class="parada parada1">Parada Uno</div>
+            <div class="parada parada2">Parada Dos</div>
+            <div class="parada parada3">Parada Tres</div>
+            <div class="parada parada4">Parada Cuatro</div>
+            <div class="parada parada5">Parada Cinco</div>
+        </div>
+        <div class="velocidad">
+            <label for="velocidad">
+                Velocidad:
+                <input type="range" name="velocidad" min="10" max="100" step="10" value="30" id="campo-velocidad">
+            </label>
+        </div>
+        <div class="puerta">
+            <div class="puerta-izq" id="puerta-izq"></div>
+            <div class="puerta-der" id="puerta-der"></div>
+        </div>
+
+        <button id="abrir-puertas">Abrir puertas</button>
+        <button id="cerrar-puertas">Cerrar puertas</button>
+
+        <div>
+            <div id="main-right">
+                <img src="../imgs/train.png" alt="" class="img-train">
+                <img src="../imgs/track.png" alt="" class="img-track" width="100%">
+            </div>
+     </div>
+
+     <div id="signals">
+        <div class="signal">
+        <button class="adelante">Adelante</button>
+        </div>
+        <div class="signal">
+        <button class="parado">Parar</button>
+
+        </div>
+        <div class="signal">
+        <button class="atras">Atras</button>
+
+        </div>
+     </div>
+        </div>
+
+    </div>
+    </main>
+    <footer id="footer">
+        <div></div>
+        <div>
+            <ul class="footer">
+                <li><a class="footer-links" href="http://www.facebook.com" >Facebook</a></li>
+                <li><a class="footer-links" href="http://www.instagram.com">Instagram</a></li>
+                <li><a class="footer-links" href="http://www.twitter.com">Twitter</a></li>
+            </ul>
+        </div>
+        <div id="newsletter">
+            <h4>Suscribete a nuestro Newsletter</h4>
+            <input type="email" placeholder="nombre@domain.com" class="newsletter">
+            <button class="btn-newsletter">Suscribir</button>
+        </div>
+    </footer>
+<script src="../js/recorrido.js"></script>
 </body>
 </html>
