@@ -122,8 +122,7 @@ padding: 0.5em;
     min-height: 100%;
     min-width: 50%;
     background-color: green;
-    transition: width 3s;
-    border-right: 1px solid black;
+    border-right: 2px solid black;
 }
 .puerta-der{
     position: absolute;
@@ -132,8 +131,7 @@ padding: 0.5em;
     min-height: 100%;
     min-width: 50%;
     background-color: green;
-    transition: width 3s;
-    border-left: 1px solid black;
+    border-left: 2px solid black;
 
 }
 #cerrar-puertas{
@@ -156,10 +154,32 @@ padding: 0.5em;
 .signal{
     margin: 2em 0;
 }
-
-@keyframes puertas{
-
+.remove-animation{
+    animation: none !important;
 }
+.flip-img{
+    transform: scaleX(-1);
+}
+.remove-flip{
+    transform: scaleX(1);
+}
+@keyframes cerrarpuertas{
+from{
+    min-width: 5%;
+}
+to{
+    min-width: 50%;
+}
+}
+
+@keyframes abrirpuertas{
+    from{
+        min-width: 50%;
+    }
+    to{
+        min-width: 5%;
+    }
+    }
 
 
 @keyframes ride{
@@ -168,5 +188,14 @@ padding: 0.5em;
     }
     to{
         right: 105vw;
+    }
+}
+
+@keyframes rideatras{
+    from{
+        left: -5vw;
+    }
+    to{
+        left: 105vw;
     }
 }
