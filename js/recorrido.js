@@ -14,35 +14,17 @@ campoVelocidad.addEventListener("input",function(e){
 });
 
 
-abrirPuertas.addEventListener('click',function(){
+
+
+parar.addEventListener("click",function(){
+    let imgTren  = document.getElementsByClassName('img-train');
+
     puertaIzq.classList.add('abrir');
     puertaDer.classList.add('abrir');
 
     puertaIzq.style.animation = "abrirpuertas 3s";
     puertaDer.style.animation = "abrirpuertas 3s";
 
-    abrirPuertas.style.display = "none";
-    cerrarPuertas.style.display = "block";
-
-});
-
-cerrarPuertas.addEventListener("click",function(e){
-    puertaIzq.classList.remove('abrir');
-    puertaDer.classList.remove('abrir');
-
-    puertaIzq.style.animation = "cerrarpuertas 3s";
-    puertaDer.style.animation = "cerrarpuertas 3s";
-
-    puertaIzq.classList.add('cerrar');
-    puertaDer.classList.add('cerrar');
-
-    abrirPuertas.style.display = "block";
-    cerrarPuertas.style.display = "none";
-});
-
-
-parar.addEventListener("click",function(){
-    let imgTren  = document.getElementsByClassName('img-train');
     console.log(imgTren[0].getBoundingClientRect());
     imgTren[0].style.animationPlayState = "paused";
 });
@@ -52,6 +34,15 @@ adelante.addEventListener("click",function(){
     let imgTren  = document.getElementsByClassName('img-train');
     imgTren[0].classList.add('remove-flip');
     imgTren[0].classList.remove('flip-img');
+
+    puertaIzq.classList.remove('abrir');
+    puertaDer.classList.remove('abrir');
+
+    puertaIzq.style.animation = "cerrarpuertas 3s";
+    puertaDer.style.animation = "cerrarpuertas 3s";
+
+    puertaIzq.classList.add('cerrar');
+    puertaDer.classList.add('cerrar');
 
     imgTren[0].style.animationPlayState = "running";
 });
@@ -64,4 +55,9 @@ atras.addEventListener("click",function(){
 
     // imgTren[0].classList.add('remove-animation');
     imgTren[0].style.animation = "rideatras 10s linear 1s infinite";
+    puertaIzq.classList.remove('abrir');
+    puertaDer.classList.remove('abrir');
+
+    puertaIzq.style.animation = "cerrarpuertas 3s";
+    puertaDer.style.animation = "cerrarpuertas 3s";
 });

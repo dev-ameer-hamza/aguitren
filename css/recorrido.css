@@ -137,6 +137,23 @@ padding: 0.5em;
 #cerrar-puertas{
     display: none;
 }
+
+.parada {
+    background-color: green;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    border: 2px solid black;
+    
+
+}
+.paradas {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+
+
 .cerrar{
     min-width: 50%;
     transition: width 3s;

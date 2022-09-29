@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!-- AWP_In_Variable NAME='"DB.PruebaWEB".Martxa'-->
+<!-- AWP_In_Variable NAME='"DB.PruebaWEB".Apagar'-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Inicio | EuskoTren</title>
 </head>
 <body>
@@ -15,20 +17,32 @@
         </div>
         <div id="nav">
             <ul id="menu" class="menu">
-                <li class="menu-item item2"><a href="recorrido.html">Ver Recorrido</a></li>
+                <li class="menu-item item2"><a href="interfaz/recorrido.html">Ver Recorrido</a></li>
             </ul>
         </div>
     </header>
     <main id="main">
+        <p>Esta en marcha? :='"DB.PruebaWEB".Martxa':</p>
+
+        <form method="POST">
+            <input type="submit" value="stop" id="stop">
+            <input type="hidden" name='"DB.PruebaWEB".Apagar' value="0">
+        </form>
+
+        <form method="POST">
+            <input type="submit" value="start" id="start">
+            <input type="hidden" name='"DB.PruebaWEB".Martxa' value="1">
+        </form>
+
         <div id="main-left">
             <p class="bienvenido">Bienvenido a <span class="euskotren">EuskoTren</span></p>
             <p class="message">Cuando viajamos, el destino no es solo hacia donde vamos, sino las experiencias que vivimos.</p>
             <p class="message">Euskotren, tu compañía de viaje.</p>
-             <a href="recorrido.html"><button  class="travel">Viajar en tranvia</button></a>
+             <a href="interfaz/recorrido.html"><button  class="travel">Viajar en tranvia</button></a>
         </div>
         <div id="main-right">
-                   <img src="../imgs/train.png" alt="" class="img-train">
-                   <img src="../imgs/track.png" alt="" class="img-track" width="100%">
+                   <img src="imgs/train.png" alt="" class="img-train">
+                   <img src="imgs/track.png" alt="" class="img-track" width="100%">
         </div>
     </main>
     <footer id="footer">
@@ -47,6 +61,6 @@
         </div>
     </footer>
 
-<script src="../js/index.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
