@@ -63,31 +63,25 @@ adelante.addEventListener("click",function(){
     console.log(p1Styles);
 
     setInterval(()=>{
-        // console.log(p2Styles.getPropertyValue('left') === imgStyles.getPropertyValue('left'));
-        console.log(parseInt(imgStyles.getPropertyValue('left')));
-        // console.log(p2Styles.getPropertyValue('left'));
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 25) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 25 ))
         {
             console.log("Llegado a parada 2");
-            imgAnim.pause();
+            pauseAnim(imgAnim);
+            abrirP();
         }
-    
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 25) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 25 ))
         {
             console.log("Llegado a parada 1");
+            pauseAnim(imgAnim);
+            abrirP();
         }
     },200);
-
 
 
     // setInterval(()=>{
     //     imgAnim.pause();
         
-    //     puertaIzq.classList.add('abrir');
-    //     puertaDer.classList.add('abrir');
-    
-    //     puertaIzq.style.animation = "abrirpuertas 1.5s";
-    //     puertaDer.style.animation = "abrirpuertas 1.5s";
+
     //     // setTimeout(()=>{
         
            
@@ -96,17 +90,40 @@ adelante.addEventListener("click",function(){
     // },6250);
 
             // imgAnim.play();
-            // puertaIzq.classList.remove('abrir');
-            // puertaDer.classList.remove('abrir');
-
-            // puertaIzq.style.animation = "cerrarpuertas 1.5s";
-            // puertaDer.style.animation = "cerrarpuertas 1.5s";
-
-            // puertaIzq.classList.add('cerrar');
-            // puertaDer.classList.add('cerrar');
+            
 
 });
 
+
+function pauseAnim(anim)
+{
+    anim.pause();
+    setTimeout(()=>{
+        anim.play();
+        cerrarP();  
+    },4000)
+}
+
+function abrirP()
+{
+    puertaIzq.classList.add('abrir');
+    puertaDer.classList.add('abrir');
+
+    puertaIzq.style.animation = "abrirpuertas 1.5s";
+    puertaDer.style.animation = "abrirpuertas 1.5s";
+}
+
+function cerrarP()
+{
+    puertaIzq.classList.remove('abrir');
+    puertaDer.classList.remove('abrir');
+
+    puertaIzq.style.animation = "cerrarpuertas 1.5s";
+    puertaDer.style.animation = "cerrarpuertas 1.5s";
+
+    puertaIzq.classList.add('cerrar');
+    puertaDer.classList.add('cerrar');
+}
 // atras.addEventListener("click",function(){
 //     let imgTren  = document.getElementsByClassName('img-train');
 //     let styles = window.getComputedStyle(imgTren[0]);
