@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- AWP_In_Variable NAME='"DB.PruebaWEB".Martxa'-->
-<!-- AWP_In_Variable NAME='"DB.PruebaWEB".Apagar'-->
+<!-- AWP_In_Variable Name='"DB.PruebaWEB".Martxa'-->
+<!-- AWP_In_Variable Name='"DB.PruebaWEB".Apagar'-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,16 +22,18 @@
         </div>
     </header>
     <main id="main">
-        <p>Esta en marcha? :='"DB.PruebaWEB".Martxa':</p>
+        <p>Esta en marcha? :="DB.PruebaWEB".Martxa:</p>
 
         <form method="POST">
             <input type="submit" value="stop" id="stop">
-            <input type="hidden" name='"DB.PruebaWEB".Apagar' value="0">
+            <input type="hidden" name='"DB.PruebaWEB".Martxa' value="0">
+            <input type="hidden" name='"DB.PruebaWEB".Apagar' value="1">
         </form>
 
         <form method="POST">
             <input type="submit" value="start" id="start">
             <input type="hidden" name='"DB.PruebaWEB".Martxa' value="1">
+            <input type="hidden" name='"DB.PruebaWEB".Apagar' value="0">
         </form>
 
         <div id="main-left">

@@ -75,12 +75,12 @@ main#main{
 }
 .img-train{
     position: absolute;
-    right: -8vw;
+    right: 3vw;
     bottom: 4vh;
     width: 7vw;
     height: 7vw;
     z-index: 999;
-    animation: ride 15s linear 1s infinite;
+    /* animation: ride 15s linear 0s infinite; */
 }
 footer#footer{
     grid-area: footer;
@@ -114,6 +114,7 @@ padding: 0.5em;
     width: 10vw;
     background-color: grey;
     position: relative;
+    border-radius: 0.8em;
 }
 .puerta-izq{
     position: absolute;
@@ -123,6 +124,8 @@ padding: 0.5em;
     min-width: 50%;
     background-color: green;
     border-right: 2px solid black;
+    border-bottom-left-radius: 0.8em;
+    border-top-left-radius: 0.8em;
 }
 .puerta-der{
     position: absolute;
@@ -132,10 +135,20 @@ padding: 0.5em;
     min-width: 50%;
     background-color: green;
     border-left: 2px solid black;
-
+    border-bottom-right-radius: 0.8em;
+    border-top-right-radius: 0.8em;
 }
 #cerrar-puertas{
     display: none;
+}
+
+.contenedor-paradas{
+    position: absolute;
+    bottom: 9em;
+    width: 90vw;
+}
+.paradas {
+    position: relative;
 }
 
 .parada {
@@ -143,17 +156,17 @@ padding: 0.5em;
     height: 3em;
     width: 3em;
     border-radius: 50%;
+    position: absolute;
     border: 2px solid black;
     
 
 }
-.paradas {
-    display: flex !important;
-    justify-content: space-between;
+.parada2{
+    left: 47%;
 }
-
-
-
+.parada3{
+    left: 95%;
+}
 .cerrar{
     min-width: 50%;
     transition: width 3s;
@@ -180,6 +193,15 @@ padding: 0.5em;
 .remove-flip{
     transform: scaleX(1);
 }
+.controles{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
 @keyframes cerrarpuertas{
 from{
     min-width: 5%;
@@ -201,18 +223,18 @@ to{
 
 @keyframes ride{
     from{
-        right: -5vw;
+        right: 3vw;
     }
     to{
-        right: 105vw;
+        right: 100vw;
     }
 }
 
 @keyframes rideatras{
     from{
-        left: -5vw;
+        left: 0vw;
     }
     to{
-        left: 105vw;
+        left: 100vw;
     }
 }
