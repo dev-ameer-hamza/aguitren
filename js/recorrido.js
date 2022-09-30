@@ -35,7 +35,7 @@ adelante.addEventListener("click",function(){
     puertaDer.style.animation = "cerrarpuertas 1.5s";
     
     let imgAnim = imgTren.animate([
-        {right:'3vw'},
+        {right:'0.5vw'},
         {right:'100vw'}
     ],{
         duration:22000,
@@ -56,30 +56,35 @@ adelante.addEventListener("click",function(){
        
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 10 ))
         {
+            console.log("Paa Paaa parada 1");
             let detalle = document.getElementsByClassName('d1')[0]; 
             pauseAnim(imgAnim,detalle,parada1); 
             abrirP();
         }
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 10 ))
         {
+            console.log("Paa Paaa parada 2");
             let detalle = document.getElementsByClassName('d2')[0];
             pauseAnim(imgAnim,detalle,parada2);
             abrirP();
         }
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p3Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p3Styles.getPropertyValue('left')) - 10 ))
         {
+            console.log("Paa Paaa parada 3");
             let detalle = document.getElementsByClassName('d3')[0];
             pauseAnim(imgAnim,detalle,parada3);
             abrirP();
         }
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p4Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p4Styles.getPropertyValue('left')) - 10 ))
         {
+            console.log("Paa Paaa parada 4");
             let detalle = document.getElementsByClassName('d4')[0];
             pauseAnim(imgAnim,detalle,parada4);
             abrirP();
         }
         if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p5Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p5Styles.getPropertyValue('left')) - 10 ))
         {
+            console.log("Paa Paaa parada 5");
             let detalle = document.getElementsByClassName('d5')[0];
             pauseAnim(imgAnim,detalle,parada5);
             abrirP();

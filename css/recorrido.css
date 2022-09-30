@@ -75,7 +75,7 @@ main#main{
 }
 .img-train{
     position: absolute;
-    right: 3vw;
+    right: 0.5vw;
     bottom: 4vh;
     width: 7vw;
     height: 7vw;
@@ -139,7 +139,7 @@ padding: 0.5em;
 
 .contenedor-paradas{
     position: absolute;
-    bottom: 14em;
+    bottom: 3.5em;
     width: 90vw;
 }
 .paradas {
@@ -213,7 +213,13 @@ padding: 0.5em;
     justify-content: space-around;
     align-items: center;
 }
-
+#adelante{
+    padding:2.5em 1.5em;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
 
 
