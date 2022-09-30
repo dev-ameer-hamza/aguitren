@@ -1,11 +1,6 @@
 ---
-subtitle: |
-  07/10/2022
-
-  aguitren
-
-  ![](vertopal_c9642370f98447228a573cf8b9d9e3f3/media/image1.png){width="4.213538932633421in"
-  height="4.388670166229221in"}
+aguitren |
+ 
 
   BY: iñigo bruk, gorka uriarte, unai díez, mi nombre
 ---
