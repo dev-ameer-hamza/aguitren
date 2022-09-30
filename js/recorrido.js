@@ -5,32 +5,17 @@ let cerrarPuertas = document.getElementById("cerrar-puertas");
 let puertaIzq = document.getElementById("puerta-izq");
 let puertaDer = document.getElementById("puerta-der");
 
-let parada2 = document.getElementsByClassName('parada2')[0];
 let parada1 = document.getElementsByClassName('parada1')[0];
+let parada2 = document.getElementsByClassName('parada2')[0];
+let parada3 = document.getElementsByClassName('parada3')[0];
+let parada4 = document.getElementsByClassName('parada4')[0];
+let parada5 = document.getElementsByClassName('parada5')[0];
 
 let parar = document.getElementById("parar");
 let adelante = document.getElementById("adelante");
 let atras = document.getElementById("atras");
 
-// campoVelocidad.addEventListener("input",function(e){
-//     console.log("se cambia la velocidad " + e.target.value );
-// });
 
-
-
-
-parar.addEventListener("click",function(){
-    let imgTren  = document.getElementsByClassName('img-train');
-
-    puertaIzq.classList.add('abrir');
-    puertaDer.classList.add('abrir');
-
-    puertaIzq.style.animation = "abrirpuertas 1.5s";
-    puertaDer.style.animation = "abrirpuertas 1.5s";
-
-    console.log(imgTren[0].getBoundingClientRect());
-    imgTren[0].style.animationPlayState = "paused";
-});
 
 puertaIzq.classList.add('abrir');
 puertaDer.classList.add('abrir');
@@ -52,55 +37,71 @@ adelante.addEventListener("click",function(){
     let imgAnim = imgTren.animate([
         {right:'3vw'},
         {right:'100vw'}
-    ],14000);
+    ],{
+        duration:22000,
+        delay:4000
+    });
 
     let imgStyles = window.getComputedStyle(imgTren);
+
     let p1Styles = window.getComputedStyle(parada1);
     let p2Styles = window.getComputedStyle(parada2);
+    let p3Styles = window.getComputedStyle(parada3);
+    let p4Styles = window.getComputedStyle(parada4);
+    let p5Styles = window.getComputedStyle(parada5);
 
-    console.log(imgStyles.getPropertyValue('left'));
-    console.log(p2Styles);
-    console.log(p1Styles);
+   
 
     setInterval(()=>{
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 25) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 25 ))
+       
+        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 10 ))
         {
-            console.log("Llegado a parada 2");
-            pauseAnim(imgAnim);
+            let detalle = document.getElementsByClassName('d1')[0]; 
+            pauseAnim(imgAnim,detalle,parada1); 
             abrirP();
         }
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 25) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 25 ))
+        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 10 ))
         {
-            console.log("Llegado a parada 1");
-            pauseAnim(imgAnim);
+            let detalle = document.getElementsByClassName('d2')[0];
+            pauseAnim(imgAnim,detalle,parada2);
             abrirP();
         }
-    },200);
-
-
-    // setInterval(()=>{
-    //     imgAnim.pause();
-        
-
-    //     // setTimeout(()=>{
-        
-           
-    //     // },4000)
-
-    // },6250);
-
-            // imgAnim.play();
-            
+        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p3Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p3Styles.getPropertyValue('left')) - 10 ))
+        {
+            let detalle = document.getElementsByClassName('d3')[0];
+            pauseAnim(imgAnim,detalle,parada3);
+            abrirP();
+        }
+        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p4Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p4Styles.getPropertyValue('left')) - 10 ))
+        {
+            let detalle = document.getElementsByClassName('d4')[0];
+            pauseAnim(imgAnim,detalle,parada4);
+            abrirP();
+        }
+        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p5Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p5Styles.getPropertyValue('left')) - 10 ))
+        {
+            let detalle = document.getElementsByClassName('d5')[0];
+            pauseAnim(imgAnim,detalle,parada5);
+            abrirP();
+        }
+    },200);          
 
 });
 
 
-function pauseAnim(anim)
+function pauseAnim(anim,detalle,parada)
 {
     anim.pause();
+    detalle.classList.add('mostrar-detalle');
+    parada.style.backgroundColor = "orange";
+
     setTimeout(()=>{
+
         anim.play();
-        cerrarP();  
+        detalle.classList.remove('mostrar-detalle');
+        parada.style.backgroundColor = "green";
+        cerrarP();
+
     },4000)
 }
 

@@ -114,7 +114,6 @@ padding: 0.5em;
     width: 10vw;
     background-color: grey;
     position: relative;
-    border-radius: 0.8em;
 }
 .puerta-izq{
     position: absolute;
@@ -124,8 +123,6 @@ padding: 0.5em;
     min-width: 50%;
     background-color: green;
     border-right: 2px solid black;
-    border-bottom-left-radius: 0.8em;
-    border-top-left-radius: 0.8em;
 }
 .puerta-der{
     position: absolute;
@@ -135,8 +132,6 @@ padding: 0.5em;
     min-width: 50%;
     background-color: green;
     border-left: 2px solid black;
-    border-bottom-right-radius: 0.8em;
-    border-top-right-radius: 0.8em;
 }
 #cerrar-puertas{
     display: none;
@@ -144,7 +139,7 @@ padding: 0.5em;
 
 .contenedor-paradas{
     position: absolute;
-    bottom: 9em;
+    bottom: 14em;
     width: 90vw;
 }
 .paradas {
@@ -161,11 +156,31 @@ padding: 0.5em;
     
 
 }
+.parada1{
+    left: 0;
+}
 .parada2{
-    left: 47%;
+    left: 25%;
 }
 .parada3{
-    left: 95%;
+    left: 50%;
+}
+.parada4{
+    left: 75%;
+}
+.parada5    {
+    left: 99%;
+}
+.detalle-paradas
+{
+    width: 40%;
+    margin: 5em auto;
+}
+.detalle{
+    display: none;
+}
+.mostrar-detalle{
+    display: block;
 }
 .cerrar{
     min-width: 50%;
