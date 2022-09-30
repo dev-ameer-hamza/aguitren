@@ -57,7 +57,11 @@ main#main{
     padding-right: 5vmax;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     justify-content: space-between;
+=======
+    justify-content: space-around;
+>>>>>>> unai
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -88,9 +92,23 @@ main#main{
 }
 .euskotren{
     color: forestgreen;
+<<<<<<< HEAD
     position: relative;
 }
 
+=======
+}
+.euskotren:after{
+    background-color: forestgreen;
+    content: "";
+    height: 0.7vmin;
+    width: 10vmax;
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    border-top-right-radius: 7em;
+}
+>>>>>>> unai
 .message{
     font-size: 1.2em;
     line-height: 1.5em;
@@ -140,4 +158,28 @@ padding: 0.5em;
     to{
         right: 105vw;
     }
+<<<<<<< HEAD
+=======
+}
+/*codigo formulario*/
+#contenido #main #form-contacto{
+    width: 100%;
+    padding: 10% ;
+
+}
+#contenido #main form button, input, textarea{
+    width: 100%;
+    padding: 1em 1.7em;
+    margin: 0.7em 0;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+  }
+
+  #contenido #main .tg-wrap{
+    text-align: center;
+  }
+ li{
+    list-style: none;
+    display:inline-block;
+>>>>>>> unai
 }
