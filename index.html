@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- AWP_In_Variable Name='"DB.PruebaWEB".Martxa'-->
-<!-- AWP_In_Variable Name='"DB.PruebaWEB".Apagar'-->
-<!-- AWP_In_Variable Name='<PLC_Varname1>' Name='<PLC_Varname2>' Name='<PLC_Varname3>' -->
+<!-- AWP_In_Variable Name='Encender'-->
+<!-- AWP_In_Variable Name='Apagar'-->
 
 <html lang="en">
 <head>
@@ -19,30 +18,30 @@
         </div>
         <div id="nav">
             <ul id="menu" class="menu">
-                <li class="menu-item item2"><a href="interfaz/recorrido.html">Ver Recorrido</a></li>
+                <li class="menu-item item2"><a href="interfaz/automatic.html">Ver Recorrido</a></li>
             </ul>
         </div>
     </header>
     <main id="main">
-        <p>Esta en marcha? :="DB.PruebaWEB".Martxa:</p>
+        <p>Esta en marcha? :=Encender:</p>
 
         <form method="POST">
             <input type="submit" value="stop" id="stop">
-            <input type="hidden" name='"DB.PruebaWEB".Martxa' value="0">
-            <input type="hidden" name='"DB.PruebaWEB".Apagar' value="1">
+            <input type="hidden" name='Encender' value="0">
+            <input type="hidden" name='Apagar' value="1">
         </form>
 
         <form method="POST">
             <input type="submit" value="start" id="start">
-            <input type="hidden" name='"DB.PruebaWEB".Martxa' value="1">
-            <input type="hidden" name='"DB.PruebaWEB".Apagar' value="0">
+            <input type="hidden" name='Encender' value="1">
+            <input type="hidden" name='Apagar' value="0">
         </form>
 
         <div id="main-left">
             <p class="bienvenido">Bienvenido a <span class="euskotren">EuskoTren</span></p>
             <p class="message">Cuando viajamos, el destino no es solo hacia donde vamos, sino las experiencias que vivimos.</p>
             <p class="message">Euskotren, tu compañía de viaje.</p>
-             <a href="interfaz/recorrido.html"><button  class="travel">Viajar en tranvia</button></a>
+             <a href="interfaz/automatic.html"><button  class="travel">Viajar en tranvia</button></a>
         </div>
         <div id="main-right">
                    <img src="imgs/train.png" alt="" class="img-train">

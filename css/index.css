@@ -79,7 +79,6 @@ main#main{
     bottom: 4vh;
     width: 7vw;
     height: 7vw;
-    z-index: 999;
     animation: ride 15s linear 1s infinite;
 }
 .bienvenido{
