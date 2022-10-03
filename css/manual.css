@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+a:hover{
+    cursor: pointer;
+}
+
+body{
+    display: grid;
+    height: 100vh;
+    overflow-x: hidden;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas: 'nav' 'main' 'footer';
+}
+header#header{
+    grid-area: nav;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:forestgreen;
+}
+#logo h3 a{
+    font-size: 1.7em;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+ul#menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul#menu li{
+    list-style: none;
+    padding-right: 2em;
+}
+
+ul#menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer#footer{
+    grid-area: footer;
+    background-color: rgb(62, 60, 59);
+    color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-links{
+    color: white;
+}
+#newsletter h4{
+padding: 0.5em;
+}
+.newsletter{
+    padding: 0.5em;
+    outline: 1px solid green;
+    line-height: 1em;
+}
+.btn-newsletter{
+    padding: 0.5em;
+    background-color: forestgreen;
+    border: 1px solid forestgreen;
+    color: white;
+}
