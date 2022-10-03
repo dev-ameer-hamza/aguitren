@@ -153,11 +153,23 @@ padding: 0.5em;
     }
 }
 /*codigo formulario*/
-#contenido #main #form-contacto{
+/*#contenido #main #form-contacto{
     width: 100%;
     padding: 10% ;
-
+}*/
+main#mainForm{
+    grid-area: main;
+    padding-top: 2vmax;
+    padding-left: 5vmax;
+    padding-right: 5vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
+
 #contenido #main form button, input, textarea{
     width: 100%;
     padding: 1em 1.7em;
@@ -166,10 +178,12 @@ padding: 0.5em;
     border-radius: 1em;
   }
 
-  #contenido #main .tg-wrap{
+
+  /*#contenido #main .tg-wrap{
     text-align: center;
-  }
+  }*/
+ 
  li{
     list-style: none;
-    display:inline-block;
-}
+    display: inline-block;
+  }

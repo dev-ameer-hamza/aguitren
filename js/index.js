@@ -26,7 +26,7 @@ function enviarcontac(){
             else{
                 swal({
                     title: "Estas seguro?",
-                    text: "Una vez que le des a 'Si' se enviará",
+                    text: "Una vez que le des a 'Si' se enviará", 
                     icon: "warning",
                     buttons: true,
                     confirmButtonText: 'Si!',
@@ -53,7 +53,7 @@ function iniciosession() {
     if (regNombre.test(nombre) && regPasswd.test(passwd)) 
     {
     
-       window.location="contacto.html";
+       window.location="../index.html";
        window.sessionStorage.setItem("user", "admin")
     }
     else 
