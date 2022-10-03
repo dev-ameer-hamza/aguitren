@@ -259,3 +259,9 @@ to{
         left: 100vw;
     }
 }
+
+
+li{
+    list-style: none;
+    display: inline-block;
+  }
