@@ -39,9 +39,21 @@
         <div id="newsletter">
             <h4>Suscribete a nuestro Newsletter</h4>
             <input type="email" placeholder="nombre@domain.com" class="newsletter">
-            <button class="btn-newsletter">Suscribir</button>
+            <button class="btn-newsletter" onclick="sendIt()">Suscribir</button>
         </div>
     </footer>
-
+<script>
+    function sendIt(){
+    fetch("../js/prueba.json",{method:'post',headers:{
+        'Content-Type': 'x-www-form-urlencode'
+    },
+    body: "PARADA_2=" + false
+    })
+    .then(res => {
+        if(res.ok){console.log("OK")}
+        else{console.log("error")}
+    })
+}
+</script>
 </body>
 </html>

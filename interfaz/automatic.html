@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<!-- AWP_In_Variable Name="PARADA_1" -->
+<!-- AWP_In_Variable Name="PARADA_2" -->
+<!-- AWP_In_Variable Name="PARADA_3" -->
+<!-- AWP_In_Variable Name="PARADA_4" -->
+
+<!-- AWP_In_Variable Name="PUERTAS" -->
+<!-- AWP_In_Variable Name="DISTANCIA" -->
+<!-- AWP_In_Variable Name="PE" -->
+<!-- AWP_In_Variable Name="ARRANQUE" -->
+<!-- AWP_In_Variable Name="AUTOMATICO" -->
+<!-- AWP_In_Variable Name="MANUAL" -->
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,46 +51,60 @@
 
             <div id="signals">
                 <button class="adelante" id="adelante">Adelante</button>
+                <button class="emergencia" id="emergencia">Emergencia</button>
              </div>
         </div>
 
-        <div class="detalle-paradas">
-            <div class="detalle d1">
-                <h2>Parada Angulema</h2>
-                <p>Angulema es una parada de las líneas de Ibaiondo y Abetxuko en el tranvía de Vitoria, operado por Euskotren Tranbia. Fue inaugurada el 23 de diciembre de 2008 junto a todas las estaciones que comprenden el ramal Centro y el ramal de Lakua, hasta la de parada de Ibaiondo. Hasta el 15 de febrero de 2020 era la parada final de ambas líneas, hasta que el 15 de febrero de 2020 se inauguró el ramal sur hasta la universidad (con paradas en Florida, Hegoalde y Unibertsitatea).</p>
-            </div>
-            <div class="detalle d2">
-                <h2>Parada Lovaina</h2>
-                <p>Lovaina es una parada de la líneas de Ibaiondo y Abetxuko en el tranvía de Vitoria, explotado por Eusko Trenbideak bajo la marca Euskotren Tranbia. Fue inaugurada el 28 de diciembre de 2008 junto a todas las paradas de la línea de Ibaiondo, desde la de Angulema hasta la de Ibaiondo.​ Se incorporó a la línea de Abetxuko el 10 de julio de 2009.2</p>
-            </div>
-            <div class="detalle d3">
-                <h2>Parada Europa</h2>
-                <p>Europa es una parada de la líneas de Ibaiondo y Abetxuko en el tranvía de Vitoria, explotado por Eusko Trenbideak bajo la marca Euskotren Tranbia. Fue inaugurada el 28 de diciembre de 2008 junto a todas las paradas de la línea de Ibaiondo, desde la de Angulema hasta la de Ibaiondo. Se incorporó a la línea de Abetxuko el 10 de julio de 2009.</p>
-            </div>
-            <div class="detalle d4">
-                <h2>Parada Arriaga</h2>
-                <p>Arriaga es una parada de la línea de Abetxuko en el tranvía de Vitoria, explotado por Eusko Trenbideak bajo la marca Euskotren Tranbia. Fue inaugurada el 10 de julio de 2009 junto a todas las paradas de la línea de Abetxuko, desde la de Honduras hasta la de Kañabenta (entonces llamada Abetxuko).</p>
-            </div>
-            <div class="detalle d5">
-                <h2>Parada Abetxuko</h2>
-                <p>Abetxuko es una estación de la Línea de Abetxuko en el Tranvía de Vitoria, ofrecido por Euskotran. Fue inaugurada el 7 de septiembre de 2012 junto a las otras dos del barrio de Abechuco. Se encuentra ubicada en el barrio de Abetxuko, concretamente en la Plaza 1.º de Mayo junto a la Iglesia del barrio. Es la parada final de la Línea de Abetxuko.</p>
-            </div>
-        </div>
-
-
+       
         <div class="contenedor-paradas">
             <div class="paradas">
-                <div class="parada parada1"></div>
-                <div class="parada parada2"></div>
-                <div class="parada parada3"></div>
-                <div class="parada parada4"></div>
-                <div class="parada parada5"></div>
+                <div class="parada parada1">
+                    <form  id="form-parada-1">
+                    <label class="switch">
+                        <input type="checkbox" name="PARADA_1" class="parada-estado" value="1" id="estado1" onchange="cambiarEstado(event,this)" checked>
+                        <span class="slider round"></span>
+                      </label>
+                    </form>
+                </div>
+                <div class="parada parada2">
+                <form id="form-parada-2">
+                    <label class="switch">
+                        <input type="checkbox" name="PARADA_2" class="parada-estado" value="2" id="estado2" onchange="cambiarEstado(event,this)" checked>
+                        <span class="slider round"></span>
+                      </label>
+                </form>
+                </div>
+                </form>
+                <div class="parada parada3">
+                <form  id="form-parada-3">
+                    <label class="switch">
+                        <input type="checkbox" name="PARADA_3" class="parada-estado" value="3" id="estado3" onchange="cambiarEstado(event,this)" checked>
+                        <span class="slider round"></span>
+                      </label>
+                    </form>
+                </div>
+                <div class="parada parada4">
+                <form enctype="multipart/form-data" action="" id="form-parada-4">
+                    <label class="switch">
+                        <input type="checkbox" name="PARADA_4" class="parada-estado" value="4" id="estado4" onchange="cambiarEstado(event,this)" checked>
+                        <span class="slider round"></span>
+                      </label>
+                    </form>
+                </div>
+                <div class="parada parada5">
+                    <label class="switch">
+                        <input type="checkbox" name="PARADA_ESTADO" class="parada-estado" id="estado5"  disabled>
+                        <span class="slider round"></span>
+                      </label>  
+                </div>
             </div>
         </div>
         <div>
             <div id="main-right">
-                <img src="../imgs/train.png" alt="" class="img-train">
-                <img src="../imgs/track.png" alt="" class="img-track" width="100%">
+  
+            <hr style="position: absolute;left:0;bottom:9.6em;width:100%">
+                <img src="../imgs/tranvia.png" alt="" class="img-train">
+
             </div>
         </div>
     </div>

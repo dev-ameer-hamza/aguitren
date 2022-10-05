@@ -1,4 +1,3 @@
-let campoVelocidad = document.getElementById("campo-velocidad");
 let abrirPuertas = document.getElementById("abrir-puertas");
 let cerrarPuertas = document.getElementById("cerrar-puertas");
 
@@ -11,9 +10,15 @@ let parada3 = document.getElementsByClassName('parada3')[0];
 let parada4 = document.getElementsByClassName('parada4')[0];
 let parada5 = document.getElementsByClassName('parada5')[0];
 
-let parar = document.getElementById("parar");
+let estado1 = document.getElementById("estado1");
+let estado2 = document.getElementById("estado2");
+let estado3 = document.getElementById("estado3");
+let estado4 = document.getElementById("estado4");
+let estado5 = document.getElementById("estado5");
+
+
 let adelante = document.getElementById("adelante");
-let atras = document.getElementById("atras");
+let emergencia = document.getElementById("emergencia");
 
 
 
@@ -22,6 +27,11 @@ puertaDer.classList.add('abrir');
 
 puertaIzq.style.animation = "abrirpuertas 1.5s";
 puertaDer.style.animation = "abrirpuertas 1.5s";
+let imgAnim;
+
+emergencia.addEventListener("click",function(){
+    imgAnim.pause();
+}),
 
 adelante.addEventListener("click",function(){
     let imgTren  = document.getElementsByClassName('img-train')[0];
@@ -34,12 +44,12 @@ adelante.addEventListener("click",function(){
     puertaIzq.style.animation = "cerrarpuertas 1.5s";
     puertaDer.style.animation = "cerrarpuertas 1.5s";
     
-    let imgAnim = imgTren.animate([
+     imgAnim = imgTren.animate([
         {right:'0.5vw'},
         {right:'100vw'}
     ],{
-        duration:22000,
-        delay:4000
+        duration:30000,
+        delay:5000,
     });
 
     let imgStyles = window.getComputedStyle(imgTren);
@@ -48,63 +58,66 @@ adelante.addEventListener("click",function(){
     let p2Styles = window.getComputedStyle(parada2);
     let p3Styles = window.getComputedStyle(parada3);
     let p4Styles = window.getComputedStyle(parada4);
-    let p5Styles = window.getComputedStyle(parada5);
+    //let p5Styles = window.getComputedStyle(parada5);
 
    
 
     setInterval(()=>{
        
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 10 ))
+        if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 10 )) && (!estado1.classList.contains("afuera-de-servicio")))
         {
             console.log("Paa Paaa parada 1");
-            let detalle = document.getElementsByClassName('d1')[0]; 
-            pauseAnim(imgAnim,detalle,parada1); 
+            console.log(parada1.classList.contains("afuera-de-servicio"));
+            pauseAnim(imgAnim,parada1); 
             abrirP();
         }
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 10 ))
+        
+        if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 10 )) && (!estado2.classList.contains("afuera-de-servicio")) )
         {
             console.log("Paa Paaa parada 2");
-            let detalle = document.getElementsByClassName('d2')[0];
-            pauseAnim(imgAnim,detalle,parada2);
+            console.log(parada2.classList.contains("afuera-de-servicio"));
+
+            pauseAnim(imgAnim,parada2);
             abrirP();
         }
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p3Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p3Styles.getPropertyValue('left')) - 10 ))
+        if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p3Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p3Styles.getPropertyValue('left')) - 10 )) && (!estado3.classList.contains("afuera-de-servicio")))
         {
             console.log("Paa Paaa parada 3");
-            let detalle = document.getElementsByClassName('d3')[0];
-            pauseAnim(imgAnim,detalle,parada3);
+            console.log(parada3.classList.contains("afuera-de-servicio"));
+
+            pauseAnim(imgAnim,parada3);
             abrirP();
         }
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p4Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p4Styles.getPropertyValue('left')) - 10 ))
+        if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p4Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p4Styles.getPropertyValue('left')) - 10 )) && (!estado4.classList.contains("afuera-de-servicio")))
         {
             console.log("Paa Paaa parada 4");
-            let detalle = document.getElementsByClassName('d4')[0];
-            pauseAnim(imgAnim,detalle,parada4);
+            console.log(parada4.classList.contains("afuera-de-servicio"));
+
+            pauseAnim(imgAnim,parada4);
             abrirP();
         }
-        if( parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p5Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p5Styles.getPropertyValue('left')) - 10 ))
+        /*
+        if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p5Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p5Styles.getPropertyValue('left')) - 10 )) && (!estado5.classList.contains("afuera-de-servicio")))
         {
             console.log("Paa Paaa parada 5");
-            let detalle = document.getElementsByClassName('d5')[0];
-            pauseAnim(imgAnim,detalle,parada5);
+            console.log(parada5.classList.contains("afuera-de-servicio"));
+
+            pauseAnim(imgAnim,parada5);
             abrirP();
         }
+        */
     },200);          
 
 });
 
 
-function pauseAnim(anim,detalle,parada)
+function pauseAnim(anim,parada)
 {
     anim.pause();
-    detalle.classList.add('mostrar-detalle');
-    parada.style.backgroundColor = "orange";
 
     setTimeout(()=>{
 
         anim.play();
-        detalle.classList.remove('mostrar-detalle');
-        parada.style.backgroundColor = "green";
         cerrarP();
 
     },4000)
@@ -130,34 +143,45 @@ function cerrarP()
     puertaIzq.classList.add('cerrar');
     puertaDer.classList.add('cerrar');
 }
-// atras.addEventListener("click",function(){
-//     let imgTren  = document.getElementsByClassName('img-train');
-//     let styles = window.getComputedStyle(imgTren[0]);
 
-//     let rightPos = styles.getPropertyValue('right');
 
-//     console.log(" left " + rightPos);
 
-//     let rightVW = parseInt(rightPos) * (100 / document.documentElement.clientWidth);
+function cambiarEstado(event,parada)
+{
+    event.preventDefault();
+   
+    parada.classList.toggle("afuera-de-servicio");
+    if(!parada.checked){ // enviar el pulso al servidor
+        let formId = "form-parada-" + parada.value;
+        let form = document.getElementById(formId);
+        let nombreParada = "PARADA_" + parada.value;
 
-//     // alert(imgTren[0].style.right);
-//     imgTren[0].classList.add('flip-img');
-//     imgTren[0].classList.remove('remove-flip');
 
-//     imgTren[0].classList.add('remove-animation');
-//     // imgTren[0].style.animation = "rideatras 10s linear 1s infinite";
-    
-//     puertaIzq.classList.remove('abrir');
-//     puertaDer.classList.remove('abrir');
+        var formulario = document.createElement("form") //se genera un "formulario virtual" al cual se le añade 
+	    formulario.setAttribute("id", "formVirtual")	// un input type hidden al que se le asigna valor 
+	    formulario.setAttribute("method", "post")		// y se le asigna el atributo name 
+	    senal =  document.createElement("input")
+	    senal.setAttribute('name', nombreParada)
+	    senal.setAttribute("type", "hidden")
+	    senal.setAttribute("value", 0)
+	    formulario.innerHTML = senal.outerHTML
+        let formData = new FormData(formulario);
+            const datillo =Object.fromEntries(formData.entries());
+console.log(datillo);
+let resultado=JSON.stringify(datillo);
 
-//     puertaIzq.style.animation = "cerrarpuertas 3s";
-//     puertaDer.style.animation = "cerrarpuertas 3s";
+        fetch('automatic.html', {
+            method: 'POST' ,  
+            data: resultado 
+        })
+        .then(res => {
+            console.log(res)
+        })
+        .then(data => {
+            console.log(data)
+        })
+       
+        
 
-//     imgTren[0].animate([{
-//         right: rightVW + 'vw'
-//     },
-//     {
-//         right: '-5vw'
-//     }]
-//     ,7000);
-// });
+    }
+}
