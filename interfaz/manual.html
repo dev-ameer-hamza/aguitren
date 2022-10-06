@@ -51,7 +51,8 @@
 
             <div id="signals">
                 <button class="adelante" id="adelante">Adelante</button>
-                <button class="emergencia" id="emergencia">Emergencia</button>
+                <button class="parar" id="parar">Parar</button>
+                <button class="atras" id="atras">Atras</button>
              </div>
         </div>
 
@@ -59,34 +60,25 @@
         <div class="contenedor-paradas">
             <div class="paradas">
                 <div class="parada parada1">
-                    <form  id="form-parada-1">
-                        <button class="btn-parada1 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 1 </button>
-                    </form>
+                    <button class="btn-parada1 btn-parada" id="btn-parada1" onclick="moverAParada(this)" value="0"> Cochera </button>
                 </div>
                 <div class="parada parada2">
-                <form id="form-parada-2">
-                    <button class="btn-parada2 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 2 </button>
-                </form>
+                    <button class="btn-parada2 btn-parada" id="btn-parada2" onclick="moverAParada(this)" value="1"> Parada 1 </button>
                 </div>
-                </form>
                 <div class="parada parada3">
-                <form  id="form-parada-3">
-                    <button class="btn-parada3 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 3 </button>
-                    </form>
+                    <button class="btn-parada3 btn-parada" id="btn-parada3" onclick="moverAParada(this)" value="2"> Parada 2 </button>
                 </div>
                 <div class="parada parada4">
-                <form enctype="multipart/form-data" action="" id="form-parada-4">
-                    <button class="btn-parada4 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 4 </button> 
-                    </form>
+                    <button class="btn-parada4 btn-parada" id="btn-parada4" onclick="moverAParada(this)" value="3"> Parada 3 </button> 
                 </div>
                 <div class="parada parada5">
-                
+                    <button class="cochera btn-parada" id="cochera" onclick="moverAParada(this)" value="4">Parada 4</button>                 
                 </div>
             </div>
         </div>
         <div>
             <div id="main-right">
-                  <img src="../imgs/tranvia.png" alt="" class="img-train">
+                  <img src="../imgs/tranvia.png" alt="" class="img-train" id="img-tren" value="0">
             </div>
         </div>
     </div>
@@ -106,6 +98,6 @@
             <button class="btn-newsletter">Suscribir</button>
         </div>
     </footer>
-<script src="../js/recorrido.js"></script>
+<script src="../js/manual.js"></script>
 </body>
 </html>

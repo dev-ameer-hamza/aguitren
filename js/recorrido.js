@@ -30,13 +30,44 @@ puertaDer.style.animation = "abrirpuertas 1.5s";
 let imgAnim;
 
 emergencia.addEventListener("click",function(){
-    imgAnim.pause();
+    if(emergencia.innerText == "Emergencia"){
+        imgAnim.pause();
+        emergencia.innerHTML = "Reanudar";
+
+        // actualizando la variable de emergencia
+        // fetch('automatic.html', {
+        //     method: 'POST' ,  
+        //     body:"PE=" + 1
+        // })
+        // .then(res => {
+        //     console.log(res)
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })
+
+    }
+    else
+    {
+        imgAnim.play();
+        emergencia.innerHTML = "Emergencia";
+
+        // actualizando la variable de emergencia
+        // fetch('automatic.html', {
+        //     method: 'POST' ,  
+        //     body:"PE=" + 0
+        // })
+        // .then(res => {
+        //     console.log(res)
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })
+    }
 }),
 
 adelante.addEventListener("click",function(){
     let imgTren  = document.getElementsByClassName('img-train')[0];
-    // imgTren[0].classList.add('remove-flip');
-    // imgTren[0].classList.remove('flip-img');
 
     puertaIzq.classList.remove('abrir');
     puertaDer.classList.remove('abrir');
@@ -58,54 +89,48 @@ adelante.addEventListener("click",function(){
     let p2Styles = window.getComputedStyle(parada2);
     let p3Styles = window.getComputedStyle(parada3);
     let p4Styles = window.getComputedStyle(parada4);
-    //let p5Styles = window.getComputedStyle(parada5);
 
+    // actualizando el valor de arranque
+    // fetch('automatic.html', {
+    //     method: 'POST' ,  
+    //     body:"ARRANQUE=" + 1
+    // })
+    // .then(res => {
+    //     console.log(res)
+    // })
+    // .catch(err => {
+    //     console.log(err)
+    // })
    
 
     setInterval(()=>{
        
         if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p1Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p1Styles.getPropertyValue('left')) - 10 )) && (!estado1.classList.contains("afuera-de-servicio")))
         {
-            console.log("Paa Paaa parada 1");
-            console.log(parada1.classList.contains("afuera-de-servicio"));
+            actualizaDistancia(8000);
             pauseAnim(imgAnim,parada1); 
             abrirP();
         }
         
         if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p2Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p2Styles.getPropertyValue('left')) - 10 )) && (!estado2.classList.contains("afuera-de-servicio")) )
         {
-            console.log("Paa Paaa parada 2");
-            console.log(parada2.classList.contains("afuera-de-servicio"));
-
+            actualizaDistancia(6000);
             pauseAnim(imgAnim,parada2);
             abrirP();
         }
         if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p3Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p3Styles.getPropertyValue('left')) - 10 )) && (!estado3.classList.contains("afuera-de-servicio")))
         {
-            console.log("Paa Paaa parada 3");
-            console.log(parada3.classList.contains("afuera-de-servicio"));
-
+            actualizaDistancia(4000);
             pauseAnim(imgAnim,parada3);
             abrirP();
         }
         if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p4Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p4Styles.getPropertyValue('left')) - 10 )) && (!estado4.classList.contains("afuera-de-servicio")))
         {
-            console.log("Paa Paaa parada 4");
-            console.log(parada4.classList.contains("afuera-de-servicio"));
-
+            actualizaDistancia(2000);
             pauseAnim(imgAnim,parada4);
             abrirP();
         }
-        /*
-        if( (parseInt(imgStyles.getPropertyValue('left')) < (parseInt(p5Styles.getPropertyValue('left')) + 10) && parseInt(imgStyles.getPropertyValue('left')) > (parseInt(p5Styles.getPropertyValue('left')) - 10 )) && (!estado5.classList.contains("afuera-de-servicio")))
-        {
-            console.log("Paa Paaa parada 5");
-            console.log(parada5.classList.contains("afuera-de-servicio"));
-
-            pauseAnim(imgAnim,parada5);
-            abrirP();
-        }
-        */
+       
     },200);          
 
 });
@@ -130,6 +155,18 @@ function abrirP()
 
     puertaIzq.style.animation = "abrirpuertas 1.5s";
     puertaDer.style.animation = "abrirpuertas 1.5s";
+
+    // abriendo puertas
+    // fetch('automatic.html', {
+    //     method: 'POST' ,  
+    //     body:"PUERTAS=" + 1
+    // })
+    // .then(res => {
+    //     console.log(res)
+    // })
+    // .catch(err => {
+    //     console.log(err)
+    // })
 }
 
 function cerrarP()
@@ -142,6 +179,18 @@ function cerrarP()
 
     puertaIzq.classList.add('cerrar');
     puertaDer.classList.add('cerrar');
+
+    // cerrando puertas
+    // fetch('automatic.html', {
+    //     method: 'POST' ,  
+    //     body:"PUERTAS=" + 0
+    // })
+    // .then(res => {
+    //     console.log(res)
+    // })
+    // .catch(err => {
+    //     console.log(err)
+    // })
 }
 
 
@@ -152,36 +201,33 @@ function cambiarEstado(event,parada)
    
     parada.classList.toggle("afuera-de-servicio");
     if(!parada.checked){ // enviar el pulso al servidor
-        let formId = "form-parada-" + parada.value;
-        let form = document.getElementById(formId);
+
         let nombreParada = "PARADA_" + parada.value;
-
-
-        var formulario = document.createElement("form") //se genera un "formulario virtual" al cual se le añade 
-	    formulario.setAttribute("id", "formVirtual")	// un input type hidden al que se le asigna valor 
-	    formulario.setAttribute("method", "post")		// y se le asigna el atributo name 
-	    senal =  document.createElement("input")
-	    senal.setAttribute('name', nombreParada)
-	    senal.setAttribute("type", "hidden")
-	    senal.setAttribute("value", 0)
-	    formulario.innerHTML = senal.outerHTML
-        let formData = new FormData(formulario);
-        const datillo =Object.fromEntries(formData.entries());
-        let resultado=JSON.stringify(datillo);
-        console.log(resultado);
 
         fetch('automatic.html', {
             method: 'POST' ,  
-            body:"PUERTAS=" + 1 
+            body: nombreParada + "=" + parada.value
         })
         .then(res => {
             console.log(res)
         })
-        .then(data => {
-            console.log(data)
+        .catch(err => {
+            console.log(err)
         })
-       
-        
-
     }
+}
+
+function actualizaDistancia(distancia)
+{
+    // actualizando la distanica
+    // fetch('automatic.html', {
+    //     method: 'POST' ,  
+    //     body:"DISTANCIA=" + distancia
+    // })
+    // .then(res => {
+    //     console.log(res)
+    // })
+    // .catch(err => {
+    //     console.log(err)
+    // })
 }
