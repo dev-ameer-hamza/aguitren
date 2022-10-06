@@ -166,13 +166,13 @@ function cambiarEstado(event,parada)
 	    senal.setAttribute("value", 0)
 	    formulario.innerHTML = senal.outerHTML
         let formData = new FormData(formulario);
-            const datillo =Object.fromEntries(formData.entries());
-console.log(datillo);
-let resultado=JSON.stringify(datillo);
+        const datillo =Object.fromEntries(formData.entries());
+        let resultado=JSON.stringify(datillo);
+        console.log(resultado);
 
         fetch('automatic.html', {
             method: 'POST' ,  
-            data: resultado 
+            body:"PUERTAS=" + 1 
         })
         .then(res => {
             console.log(res)

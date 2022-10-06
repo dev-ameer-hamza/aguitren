@@ -1,17 +1,29 @@
 <!DOCTYPE html>
+<!-- AWP_In_Variable Name="PARADA_1" -->
+<!-- AWP_In_Variable Name="PARADA_2" -->
+<!-- AWP_In_Variable Name="PARADA_3" -->
+<!-- AWP_In_Variable Name="PARADA_4" -->
+
+<!-- AWP_In_Variable Name="PUERTAS" -->
+<!-- AWP_In_Variable Name="DISTANCIA" -->
+<!-- AWP_In_Variable Name="PE" -->
+<!-- AWP_In_Variable Name="ARRANQUE" -->
+<!-- AWP_In_Variable Name="AUTOMATICO" -->
+<!-- AWP_In_Variable Name="MANUAL" -->
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/manual.css">
-    <title>Manual | EuskoTren</title>
+    <title>Recorrido | AguiTren</title>
 </head>
 <body>
-    
     <header id="header">
         <div id="logo">
-            <h3><a href="../index.html">EuskoTren</a></h3>
+            <h3><a href="../index.html">AguiTren</a></h3>
         </div>
         <div id="nav">
             <ul id="menu" class="menu">
@@ -22,11 +34,63 @@
             </ul>
         </div>
     </header>
+    <main id="main">
+        <div>
 
-    <main>
+        <!-- <div class="velocidad">
+            <label for="velocidad">
+                Velocidad:
+                <input type="range" name="velocidad" min="10" max="100" step="10" value="30" id="campo-velocidad">
+            </label>
+        </div> -->
+        <div class="controles">
+            <div class="puerta">
+                <div class="puerta-izq" id="puerta-izq"></div>
+                <div class="puerta-der" id="puerta-der"></div>
+            </div>
 
+            <div id="signals">
+                <button class="adelante" id="adelante">Adelante</button>
+                <button class="emergencia" id="emergencia">Emergencia</button>
+             </div>
+        </div>
+
+       
+        <div class="contenedor-paradas">
+            <div class="paradas">
+                <div class="parada parada1">
+                    <form  id="form-parada-1">
+                        <button class="btn-parada1 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 1 </button>
+                    </form>
+                </div>
+                <div class="parada parada2">
+                <form id="form-parada-2">
+                    <button class="btn-parada2 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 2 </button>
+                </form>
+                </div>
+                </form>
+                <div class="parada parada3">
+                <form  id="form-parada-3">
+                    <button class="btn-parada3 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 3 </button>
+                    </form>
+                </div>
+                <div class="parada parada4">
+                <form enctype="multipart/form-data" action="" id="form-parada-4">
+                    <button class="btn-parada4 btn-parada" id="btn-parada1" onclick="moverAParada(this)"> Parada 4 </button> 
+                    </form>
+                </div>
+                <div class="parada parada5">
+                
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="main-right">
+                  <img src="../imgs/tranvia.png" alt="" class="img-train">
+            </div>
+        </div>
+    </div>
     </main>
-
     <footer id="footer">
         <div></div>
         <div>
@@ -39,21 +103,9 @@
         <div id="newsletter">
             <h4>Suscribete a nuestro Newsletter</h4>
             <input type="email" placeholder="nombre@domain.com" class="newsletter">
-            <button class="btn-newsletter" onclick="sendIt()">Suscribir</button>
+            <button class="btn-newsletter">Suscribir</button>
         </div>
     </footer>
-<script>
-    function sendIt(){
-    fetch("../js/prueba.json",{method:'post',headers:{
-        'Content-Type': 'x-www-form-urlencode'
-    },
-    body: "PARADA_2=" + false
-    })
-    .then(res => {
-        if(res.ok){console.log("OK")}
-        else{console.log("error")}
-    })
-}
-</script>
+<script src="../js/recorrido.js"></script>
 </body>
 </html>
