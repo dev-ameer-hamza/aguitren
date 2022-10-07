@@ -354,3 +354,24 @@ li{
   .slider.round:before {
     border-radius: 50%;
   }
+
+
+
+  @keyframes cerrarpuertas{
+    from{
+        min-width: 5%;
+    }
+    to{
+        min-width: 50%;
+    }
+    }
+    
+    @keyframes abrirpuertas{
+        from{
+            min-width: 50%;
+        }
+        to{
+            min-width: 5%;
+        }
+        }
+    

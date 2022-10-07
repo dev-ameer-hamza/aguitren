@@ -1,7 +1,7 @@
 let tren = document.getElementById("img-tren");
-let adelante = document.getElementById("adelante");
 let parar = document.getElementById("parar");
 let atras = document.getElementById("atras");
+
 
 function moverAParada(parada){
     let distancia = 0;
@@ -57,14 +57,6 @@ function moverDerecha(distancia,tiempo)
     tren.style.left = distanciaPor;
 }
 
-adelante.addEventListener("click",function(){
-
-    // iniciar la animacion
-
-    alert("que se vaya adelante");
-
-
-});
 
 parar.addEventListener("click",function(){
 
@@ -77,9 +69,23 @@ parar.addEventListener("click",function(){
 
 atras.addEventListener("click",function(){
 
-    // iniciar la animacion
+    let posicionTren = tren.getAttribute("value");
 
-    alert("que se vaya atras");
+    let diferencia = posicionTren - 0;
+
+    if(diferencia > 0)
+    {
+        tren.animate([
+            {left:posicionTren * 25 + "%"},
+            {left:0}
+        ],diferencia * 2000);
+        tren.style.left = 0;
+        tren.setAttribute("value",0);
+
+        actualizarArranque();
+        actualizarDistancia();
+        actualizarPuertas();
+    }
 
 
 });
@@ -88,3 +94,17 @@ atras.addEventListener("click",function(){
 function actualizarArranque(){}
 function actualizarDistancia(){}
 function actualizarPuertas(){}
+
+function cambiarModo(){
+    fetch("automatic.html",{
+        method:"post",
+        body:"AUTOMATIC=1&MANUAL=0"
+    })
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.error(err);
+    })
+}
+

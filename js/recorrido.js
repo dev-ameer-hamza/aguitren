@@ -42,16 +42,16 @@ emergencia.addEventListener("click",function(){
         emergencia.innerHTML = "Reanudar";
 
         // actualizando la variable de emergencia
-        // fetch('automatic.html', {
-        //     method: 'POST' ,  
-        //     body:"PE=" + 1
-        // })
-        // .then(res => {
-        //     console.log(res)
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        // })
+         fetch('automatic.html', {
+             method: 'POST' ,  
+             body:"PE=" + 1
+         })
+         .then(res => {
+             console.log(res)
+         })
+         .catch(err => {
+             console.log(err)
+         })
 
     }
     else
@@ -60,16 +60,16 @@ emergencia.addEventListener("click",function(){
         emergencia.innerHTML = "Emergencia";
 
         // actualizando la variable de emergencia
-        // fetch('automatic.html', {
-        //     method: 'POST' ,  
-        //     body:"PE=" + 0
-        // })
-        // .then(res => {
-        //     console.log(res)
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        // })
+         fetch('automatic.html', {
+             method: 'POST' ,  
+             body:"PE=" + 0
+         })
+         .then(res => {
+             console.log(res)
+         })
+         .catch(err => {
+             console.log(err)
+         })
     }
 }),
 
@@ -97,17 +97,17 @@ adelante.addEventListener("click",function(){
     let p3Styles = window.getComputedStyle(parada3);
     let p4Styles = window.getComputedStyle(parada4);
 
-    // actualizando el valor de arranque
-    // fetch('automatic.html', {
-    //     method: 'POST' ,  
-    //     body:"ARRANQUE=" + 1
-    // })
-    // .then(res => {
-    //     console.log(res)
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
+     //actualizando el valor de arranque
+     fetch('automatic.html', {
+         method: 'POST' ,  
+         body:"ARRANQUE=" + 1
+     })
+     .then(res => {
+         console.log(res)
+     })
+     .catch(err => {
+         console.log(err)
+     })
    
 
     setInterval(()=>{
@@ -164,16 +164,16 @@ function abrirP()
     puertaDer.style.animation = "abrirpuertas 1.5s";
 
     // abriendo puertas
-    // fetch('automatic.html', {
-    //     method: 'POST' ,  
-    //     body:"PUERTAS=" + 1
-    // })
-    // .then(res => {
-    //     console.log(res)
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
+     fetch('automatic.html', {
+         method: 'POST' ,  
+         body:"PUERTAS=" + 1
+     })
+     .then(res => {
+         console.log(res)
+     })
+     .catch(err => {
+         console.log(err)
+     })
 }
 
 function cerrarP()
@@ -188,16 +188,16 @@ function cerrarP()
     puertaDer.classList.add('cerrar');
 
     // cerrando puertas
-    // fetch('automatic.html', {
-    //     method: 'POST' ,  
-    //     body:"PUERTAS=" + 0
-    // })
-    // .then(res => {
-    //     console.log(res)
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
+     fetch('automatic.html', {
+        method: 'POST' ,  
+         body:"PUERTAS=" + 0
+     })
+     .then(res => {
+         console.log(res)
+     })
+     .catch(err => {
+         console.log(err)
+     })
 }
 
 
@@ -227,14 +227,28 @@ function cambiarEstado(event,parada)
 function actualizaDistancia(distancia)
 {
     // actualizando la distanica
-    // fetch('automatic.html', {
-    //     method: 'POST' ,  
-    //     body:"DISTANCIA=" + distancia
-    // })
-    // .then(res => {
-    //     console.log(res)
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
+     fetch('automatic.html', {
+         method: 'POST' ,  
+         body:"DISTANCIA=" + distancia
+     })
+     .then(res => {
+        console.log(res)
+     })
+     .catch(err => {
+         console.log(err)
+     })
+}
+
+
+function cambiarModo(){
+    fetch("automatic.html",{
+        method:"post",
+        body:"AUTOMATIC=0&MANUAL=1"
+    })
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.error(err);
+    })
 }
