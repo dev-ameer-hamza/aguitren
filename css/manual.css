@@ -14,10 +14,10 @@ a:hover{
 
 body{
     display: grid;
-    height: 100vh;
+    height: 100vh;  
     width: 100vw;
     overflow-x: hidden;
-    grid-template-columns: 100%;
+    grid-template-columns: 100vw;
     grid-template-rows: 1fr 10fr 1fr;
     grid-template-areas: 'nav' 'main' 'footer';
 }
@@ -62,7 +62,7 @@ main#main{
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0;
-    width: 100%;
+    max-width: 100vw;
     border: 5px solid orange;
 }
 #train-track{
@@ -136,7 +136,7 @@ padding: 0.5em;
 
 .contenedor-paradas{
     position: absolute;
-    bottom: 12em;
+    bottom: 20em;
     width: 90vw;
 }
 .paradas {

@@ -1,15 +1,20 @@
 let tren = document.getElementById("img-tren");
+let adelante = document.getElementById("adelante");
+let parar = document.getElementById("parar");
+let atras = document.getElementById("atras");
 
 function moverAParada(parada){
     let distancia = 0;
     let posicionDelTren = parseInt(tren.getAttribute('value'));
     posicionDeParadaSeleccionada = parseInt(parada.value);
-console.log("posicion " + posicionDelTren +" "+posicionDeParadaSeleccionada);
     if(posicionDelTren < posicionDeParadaSeleccionada)
     {
         // mover a la izquierda
         distancia = posicionDeParadaSeleccionada - posicionDelTren;
         let porcentajeDeDistancia = posicionDeParadaSeleccionada * 25;
+        if(posicionDeParadaSeleccionada == 4){
+            porcentajeDeDistancia = 92;
+        }
         let tiempoAnimacion = 2000 * distancia;
         moverDerecha(porcentajeDeDistancia,tiempoAnimacion);
         tren.setAttribute('value',parada.value);
@@ -28,6 +33,10 @@ console.log("posicion " + posicionDelTren +" "+posicionDeParadaSeleccionada);
 
 function moverIzquierda(distancia,tiempo)
 {
+    actualizarArranque();
+    actualizarDistancia();
+    actualizarPuertas();
+
     console.log(distancia +" "+ tiempo);
     let posicionTren = parseInt(tren.getAttribute('value') * 25) + "%";
     let distanciaPor = distancia + "%";
@@ -37,9 +46,45 @@ function moverIzquierda(distancia,tiempo)
 
 function moverDerecha(distancia,tiempo)
 {
+    actualizarArranque();
+    actualizarDistancia();
+    actualizarPuertas();
+
     console.log(distancia +" "+ tiempo);
     let posicionTren = parseInt(tren.getAttribute('value') * 25) + "%";
     let distanciaPor = distancia + "%";
     tren.animate([{left:posicionTren},{left:distanciaPor}],tiempo);
     tren.style.left = distanciaPor;
 }
+
+adelante.addEventListener("click",function(){
+
+    // iniciar la animacion
+
+    alert("que se vaya adelante");
+
+
+});
+
+parar.addEventListener("click",function(){
+
+    // iniciar la animacion
+
+    alert("que se pare");
+
+
+});
+
+atras.addEventListener("click",function(){
+
+    // iniciar la animacion
+
+    alert("que se vaya atras");
+
+
+});
+
+
+function actualizarArranque(){}
+function actualizarDistancia(){}
+function actualizarPuertas(){}

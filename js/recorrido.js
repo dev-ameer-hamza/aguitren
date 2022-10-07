@@ -29,6 +29,13 @@ puertaIzq.style.animation = "abrirpuertas 1.5s";
 puertaDer.style.animation = "abrirpuertas 1.5s";
 let imgAnim;
 
+setInterval(function(){
+    fetch("automatic.html")
+    .then(res => {
+        console.log(res)
+    })
+},1000);
+
 emergencia.addEventListener("click",function(){
     if(emergencia.innerText == "Emergencia"){
         imgAnim.pause();
