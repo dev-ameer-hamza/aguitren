@@ -2,7 +2,7 @@
 aguitren |
  
 
-  BY: iñigo bruk, gorka uriarte, unai díez, mi nombre
+  BY: iñigo bruk, gorka uriarte, unai díez, Ameer Hamza
 ---
 
 # indice {#indice .TOC-Heading}
@@ -142,3 +142,18 @@ Lorem ipsum
 Para poder controlar de forma eficiente el entorno cliente de la página,
 hemos utilizado el lenguaje JavaScript para la posibilidad de controlar
 todos los eventos posibles dentro de la aplicación web.
+Reto 1  realizado por
+
+> Gorka Uriarte
+> Unai Díez
+> Ameer Hamza
+> Bruk bruk
+
+
+
+
+
+
+
+
+ESTE RETO CONSTARA DE CONECTAR UNA PAGINA WEB A UN SERVIDOR DE PLC SIEMENS.
