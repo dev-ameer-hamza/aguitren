@@ -1,7 +1,7 @@
 let tren = document.getElementById("img-tren");
 let parar = document.getElementById("parar");
 let atras = document.getElementById("atras");
-
+let imgAnim;
 
 function moverAParada(parada){
     let distancia = 0;
@@ -53,19 +53,25 @@ function moverDerecha(distancia,tiempo)
     console.log(distancia +" "+ tiempo);
     let posicionTren = parseInt(tren.getAttribute('value') * 25) + "%";
     let distanciaPor = distancia + "%";
-    tren.animate([{left:posicionTren},{left:distanciaPor}],tiempo);
+    imgAnim = tren.animate([{left:posicionTren},{left:distanciaPor}],tiempo);
     tren.style.left = distanciaPor;
 }
 
 
 parar.addEventListener("click",function(){
+    if(parar.innerText == "Parar"){
+        imgAnim.pause();
+        parar.innerHTML = "Reanudar";
+        // actualizando la variable de emergencia
 
-    // iniciar la animacion
+    }
+    else
+    {
+        imgAnim.play();
+        parar.innerHTML = "Parar";
 
-    alert("que se pare");
-
-
-});
+    }
+}),
 
 atras.addEventListener("click",function(){
 
@@ -75,7 +81,7 @@ atras.addEventListener("click",function(){
 
     if(diferencia > 0)
     {
-        tren.animate([
+        imgAnim = tren.animate([
             {left:posicionTren * 25 + "%"},
             {left:0}
         ],diferencia * 2000);
